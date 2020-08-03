@@ -1,0 +1,28 @@
+import random
+list=['rock','paper','Scissor']
+c_score=0
+u_score=0
+while(1):
+    computer_choice=random.choice(list)
+    user_choice=input("Enter your chice: ")
+    if(computer_choice==user_choice):
+        print("Match tie!")
+    elif((computer_choice=="rock" and user_choice=="paper") or (computer_choice=="scissor" and user_choice=="rock") or (computer_choice=="paper" and user_choice=="scissor")):
+        print("you got one point!")
+        u_score=u_score+1
+        print("your score is ",u_score)
+    elif((computer_choice=="paper" and user_choice=="rock") or (computer_choice=="rock" and user_choice=="scissor") or (computer_choice=="scissor" and user_choice=="paper")):
+        print("Me got one point")
+        c_score+=1
+        print("My score is ",c_score)
+    wish=input("Do you want to continue:say yes ")
+    if(wish=="yes"):
+        continue
+    else:
+        break
+if(u_score>c_score):
+    print("YOU WIN")
+elif(u_score<c_score):
+    print("Sorry! I WIN")
+else:
+    print("TIE")
